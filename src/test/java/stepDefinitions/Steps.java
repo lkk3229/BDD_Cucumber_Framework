@@ -7,10 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import cucumber.api.java.en.*;
 import pageObjects.LoginPage;
 
-public class Steps  {
-    
-    public WebDriver driver;
-    public LoginPage lp;
+public class Steps extends BaseClass  {
+  
     
     @Given("User launch Chrome browser")
     public void user_launch_Chrome_browser() {
@@ -57,5 +55,47 @@ public class Steps  {
     @Then("close browser")
     public void close_browser() {
         driver.quit();
+    }
+    
+    //Customer feature step definitions.............
+    
+    @Then("User can view Dashboard")
+    public void user_can_view_Dashboard() {
+        
+    }
+
+    @When("User click on customers Menu")
+    public void user_click_on_customers_Menu() {
+        
+    }
+
+    @When("click on customers Menu Item")
+    public void click_on_customers_Menu_Item() {
+        
+    }
+
+    @When("click on Add new button")
+    public void click_on_Add_new_button() {
+        
+    }
+
+    @Then("User can view Add new customer page")
+    public void user_can_view_Add_new_customer_page() {
+        
+    }
+
+    @When("User enter customer info")
+    public void user_enter_customer_info() {
+        
+    }
+
+    @When("click on Save button")
+    public void click_on_Save_button() {
+        
+    }
+
+    @Then("User can view confirmation message {string}")
+    public void user_can_view_confirmation_message(String string) {
+        
     }
 }

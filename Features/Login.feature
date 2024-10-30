@@ -2,7 +2,7 @@ Feature: Login
 
   Scenario: Successful login with Valid Credentials
     Given User launch Chrome browser
-    When User open URL "https://admin-demo.nopcommerce.com/login"
+    When User open URL "http://admin-demo.nopcommerce.com/login"
     And User enters Email as "admin@yourstore.com" and Password as "admin"
     And Click on Login
     Then Page Title should be "Dashboard / nopCommerce administration"
@@ -12,7 +12,7 @@ Feature: Login
 
   Scenario Outline: login Data Driven
   	Given User launch Chrome browser
-    When User open URL "https://admin-demo.nopcommerce.com/login"
+    When User open URL "http://admin-demo.nopcommerce.com/login"
     And User enters Email as "<email>" and Password as "<password>"
     And Click on Login
     Then Page Title should be "Dashboard / nopCommerce administration"
