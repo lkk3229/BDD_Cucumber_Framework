@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import cucumber.api.java.en.*;
+import pageObjects.AddcustomerPage;
 import pageObjects.LoginPage;
 
 public class Steps extends BaseClass  {
@@ -61,32 +62,52 @@ public class Steps extends BaseClass  {
     
     @Then("User can view Dashboard")
     public void user_can_view_Dashboard() {
-        
+      addCust=new AddcustomerPage(driver);
+      Assert.assertEquals("Dashboard / nopCommerce administration", addCust.getPageTitle());
     }
 
     @When("User click on customers Menu")
-    public void user_click_on_customers_Menu() {
-        
+    public void user_click_on_customers_Menu() throws InterruptedException {
+    	Thread.sleep(3000);
+    	addCust.clickOnCustomersMenu();
     }
 
     @When("click on customers Menu Item")
-    public void click_on_customers_Menu_Item() {
-        
+    public void click_on_customers_Menu_Item() throws InterruptedException {
+    	Thread.sleep(2000);
+    	addCust.clickOnCustomersMenuItem();
     }
 
     @When("click on Add new button")
-    public void click_on_Add_new_button() {
-        
+    public void click_on_Add_new_button() throws InterruptedException {
+    	 addCust.clickOnAddnew();
+    	 Thread.sleep(2000);
     }
 
     @Then("User can view Add new customer page")
     public void user_can_view_Add_new_customer_page() {
-        
+      Assert.assertEquals("Add a new customer / nopCommerce administration", addCust.getPageTitle());  
     }
 
     @When("User enter customer info")
-    public void user_enter_customer_info() {
-        
+    public void user_enter_customer_info() throws InterruptedException {
+    	
+    	String email = randomestring() + "@gmail.com";
+        addCust.setEmail(email);
+        addCust.setPassword("test123");
+        // Registered - default
+        // The customer cannot be in both 'Guests' and 'Registered' customer roles
+        // Add the customer to 'Guests' or 'Registered' customer role
+        addCust.setCustomerRoles("Guest");
+        Thread.sleep(3000);
+
+        addCust.setManagerOfVendor("Vendor 2");
+        addCust.setGender("Male");
+        addCust.setFirstName("Pavan");
+        addCust.setLastName("Kumar");
+        addCust.setDob("7/05/1985"); // Format: D/MM/YYY
+        addCust.setCompanyName("busyQA");
+        addCust.setAdminContent("This is for testing........."); 
     }
 
     @When("click on Save button")
