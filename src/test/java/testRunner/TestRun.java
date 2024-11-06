@@ -1,19 +1,18 @@
+
 package testRunner;
 
+
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
 
-@RunWith(Cucumber.class) 
-@CucumberOptions
-	(features=".//Features/Customers.feature",
-	 glue="stepDefinitions",
-	 dryRun=true,
-	 monochrome=true,
-	 plugin= {"pretty",
-			 "html:test-output"}
-			)
-
+@RunWith(Cucumber.class)
+@CucumberOptions(
+        features=".//Features/",
+        glue="stepDefinitions",
+        tags={"@sanity"},
+        monochrome=true,
+        plugin= {"pretty","html:Reports"}
+)
 public class TestRun {
-
 }

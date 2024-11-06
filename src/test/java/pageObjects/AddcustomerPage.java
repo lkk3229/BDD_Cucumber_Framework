@@ -8,13 +8,14 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 public class AddcustomerPage {
-	public WebDriver ldriver;
+    public WebDriver ldriver;
 
-    public AddcustomerPage(WebDriver rdriver) {
-        ldriver = rdriver;
-        PageFactory.initElements(rdriver, this);
+    public AddcustomerPage(WebDriver rdriver)
+    {
+        ldriver=rdriver;
+        PageFactory.initElements(ldriver, this);
     }
-    
+
     By lnkCustomers_menu=By.xpath("//a[@href='#']//span[contains(text(),'Customers')]");
     By lnkCustomers_menuitem=By.xpath("//span[@class='menu-item-title'][contains(text(),'Customers')]");
 
@@ -171,5 +172,4 @@ public class AddcustomerPage {
     {
         ldriver.findElement(btnSave).click();
     }
-    
 }

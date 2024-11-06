@@ -4,58 +4,60 @@ formatter.feature({
   "description": "",
   "keyword": "Feature"
 });
-formatter.scenario({
-  "name": "Add a new Customer",
+formatter.background({
+  "name": "backround steps",
   "description": "",
-  "keyword": "Scenario"
+  "keyword": "Background"
 });
 formatter.step({
-  "name": "User launch Chrome browser",
+  "name": "User Launch Chrome browser",
   "keyword": "Given "
 });
-formatter.match({
-  "location": "Steps.user_launch_Chrome_browser()"
-});
+formatter.match({});
 formatter.result({
-  "status": "skipped"
+  "status": "undefined"
 });
 formatter.step({
-  "name": "User open URL \"http://admin-demo.nopcommerce.com/login\"",
+  "name": "User opens URL \"http://admin-demo.nopcommerce.com/login\"",
   "keyword": "When "
 });
-formatter.match({
-  "location": "Steps.user_open_URL(String)"
-});
+formatter.match({});
 formatter.result({
-  "status": "skipped"
+  "status": "undefined"
 });
 formatter.step({
   "name": "User enters Email as \"admin@yourstore.com\" and Password as \"admin\"",
   "keyword": "And "
 });
-formatter.match({
-  "location": "Steps.user_enters_Email_as_and_Password_as(String,String)"
-});
+formatter.match({});
 formatter.result({
-  "status": "skipped"
+  "status": "undefined"
 });
 formatter.step({
   "name": "Click on Login",
   "keyword": "And "
 });
-formatter.match({
-  "location": "Steps.click_on_Login()"
-});
+formatter.match({});
 formatter.result({
-  "status": "skipped"
+  "status": "undefined"
 });
 formatter.step({
-  "name": "User can view Dashboard",
+  "name": "User can view Dashboad",
   "keyword": "Then "
 });
 formatter.match({});
 formatter.result({
   "status": "undefined"
+});
+formatter.scenario({
+  "name": "Add new Customer",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@sanity"
+    }
+  ]
 });
 formatter.step({
   "name": "User click on customers Menu",
@@ -117,10 +119,8 @@ formatter.step({
   "name": "close browser",
   "keyword": "And "
 });
-formatter.match({
-  "location": "Steps.close_browser()"
-});
+formatter.match({});
 formatter.result({
-  "status": "skipped"
+  "status": "undefined"
 });
 });

@@ -7,7 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
-	public WebDriver ldriver;
+
+    public WebDriver ldriver;
 
     public LoginPage(WebDriver rdriver) {
         ldriver = rdriver;
@@ -22,7 +23,7 @@ public class LoginPage {
     @CacheLookup
     WebElement txtPassword;
 
-    @FindBy(xpath = "//button[@type='submit']")
+    @FindBy(xpath = "//input[@value='Log in']")
     @CacheLookup
     WebElement btnLogin;
 
@@ -49,4 +50,5 @@ public class LoginPage {
     public void clickLogout() {
         lnkLogout.click();
     }
+
 }
